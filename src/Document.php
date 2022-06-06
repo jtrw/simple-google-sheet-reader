@@ -38,7 +38,7 @@ class Document
      * @return array
      * @throws SheetNotFoundException
      */
-    public function getValue(string $range): array
+    public function getValues(string $range): array
     {
         if (!$this->sheet) {
             throw new SheetNotFoundException();
@@ -55,11 +55,10 @@ class Document
      */
     public function getGeneratorValue(string $range): Generator
     {
-        if (!$this->sheet) {
-            throw new SheetNotFoundException();
-        }
-        $response = $this->serviceSheets->spreadsheets_values->get($this->sheet, $range);
+        $values = $this->getValues($range);
         
-        yield $response->getValues();
+        foreach ($values as $row) {
+            yield $row;
+        }
     }
 }
