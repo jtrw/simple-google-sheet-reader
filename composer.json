@@ -1,0 +1,21 @@
+{
+    "name": "jtrw/simple-google-sheet-reader",
+    "description": "read google sheet",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nil Borodulia",
+            "email": "brdnlsrg@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : ">=7.4",
+        "google/apiclient": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jtrw\\SimpleGoogleSheet\\": "src"
+        }
+    }
+}
