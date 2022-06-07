@@ -45,7 +45,7 @@ class Document
         }
         $response = $this->serviceSheets->spreadsheets_values->get($this->sheet, $range);
         
-        return $response->getValues();
+        return $response->getValues() ?: [];
     }
     
     /**
